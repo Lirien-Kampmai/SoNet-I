@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb187f9f6ed50473d8b933585934090e, type: 3}
+  m_Name: archer_properties
+  m_EditorClassIdentifier: 
+  m_Mode: 2
+  m_ProjectilePrefab: {fileID: 7139100562395465139, guid: 6d38ce7585ed04cf38812dd88083e9b2, type: 3}
+  m_RateOfFire: 0.8
+  m_EnegyUseWeapon: 0
+  m_AmmoUseWeapon: 0
+  m_LaunchSFX: {fileID: 0}
