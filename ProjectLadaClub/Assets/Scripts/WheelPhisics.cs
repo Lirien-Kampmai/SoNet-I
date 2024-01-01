@@ -57,6 +57,12 @@ namespace ProjectCar
                 SynchCollTrans();
             }
 
+            public void ConfVenicleSubstep(float speedThreshold, int speedBelowThreshold, int speedAboveThreshold)
+            {
+                m_LeftWheelCollider.ConfigureVehicleSubsteps(speedThreshold, speedBelowThreshold, speedAboveThreshold);
+                m_RightWheelCollider.ConfigureVehicleSubsteps(speedThreshold, speedBelowThreshold, speedAboveThreshold);
+            }
+
             public float GetAvaregeRPMWheel()
             {
                 return (m_LeftWheelCollider.rpm + m_RightWheelCollider.rpm) * 0.5f;

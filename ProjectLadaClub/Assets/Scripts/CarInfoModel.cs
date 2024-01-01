@@ -42,6 +42,10 @@ namespace ProjectCar
             public float LinearVelocity => m_CarPhisics.LinearVelocity;
             public float WheelSpeed => m_CarPhisics.GetWheelSpeed();
             public float MaxSpeed => m_MaxSpeed;
+            public float EngineRPM => m_EngineRPM;
+            public float EngineMaxRPM => m_EngineMaxRPM;
+            public int SelectedGearIndex => m_SelectedGearIndex;
+
 
             private CarPhisics m_CarPhisics;
 

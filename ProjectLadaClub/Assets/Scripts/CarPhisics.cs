@@ -45,6 +45,11 @@ namespace ProjectCar
 
                 if (m_CenterOfMass != null)
                     rigidbody.centerOfMass = m_CenterOfMass.localPosition;
+
+                for(int i = 0; i < m_WheelAxle.Length; ++i)
+                {
+                    m_WheelAxle[i].ConfVenicleSubstep(50, 50, 50);
+                }
             }
 
             private void FixedUpdate()
