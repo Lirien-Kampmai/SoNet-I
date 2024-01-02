@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace ProjectCar
 {
-    namespace Sound
+    namespace SFX
     {
         [RequireComponent(typeof(AudioSource))]
         public class EngineSound : MonoBehaviour
         {
-            [SerializeField] private Car.CarInfoModel m_Car;
+            [SerializeField] private CarInfoModel m_Car;
             [SerializeField] private AudioSource m_AudioSource;
 
             [SerializeField] private float m_ModVolume;

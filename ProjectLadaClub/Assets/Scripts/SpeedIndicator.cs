@@ -10,7 +10,7 @@ namespace ProjectCar
     {
         public class SpeedIndicator : MonoBehaviour
         {
-            [SerializeField] private Car.CarInfoModel m_Car;
+            [SerializeField] private CarInfoModel m_Car;
             [SerializeField] private Text m_Text;
 
             private void Start()

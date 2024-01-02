@@ -15,7 +15,7 @@ namespace ProjectCar
 
         public class EngineIndicator : MonoBehaviour
         {
-            [SerializeField] private Car.CarInfoModel m_Car;
+            [SerializeField] private CarInfoModel m_Car;
             [SerializeField] private Image m_ImageRPM;
             [SerializeField] private Text m_TextGear;
             [SerializeField] private EngineIndicatorColor[] m_EngineIndicatorColor;
