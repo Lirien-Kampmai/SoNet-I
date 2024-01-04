@@ -10,6 +10,8 @@ namespace ProjectCar
         public class WheelEfect : MonoBehaviour
         {
             [SerializeField] private WheelCollider[] m_WheelColliders;
+            [SerializeField] private ParticleSystem[] m_Smoke;
+            [SerializeField] private new AudioSource m_Audio;
             [SerializeField] private float m_ForwardSlipLimit;
             [SerializeField] private float m_SidewaySlipLimit;
             [SerializeField] private GameObject m_SkidPrefab;
@@ -23,10 +25,13 @@ namespace ProjectCar
                 carInfoModel = GetComponentInParent<CarInfoModel>();
                 m_WheelColliders = carInfoModel.GetComponentsInChildren<WheelCollider>();
                 m_SkidTrail = new Transform[m_WheelColliders.Length];
+                m_Smoke = GetComponentsInChildren<ParticleSystem>();
             }
 
             private void Update()
             {
+                bool isSleep = false;
+
                 for (int i = 0; i < m_WheelColliders.Length; i++)
                 {
                     m_WheelColliders[i].GetGroundHit(out wheelHit);
@@ -40,18 +45,35 @@ namespace ProjectCar
                                 m_SkidTrail[i] = Instantiate(m_SkidPrefab).transform;
                             }
 
+                            if(m_Audio.isPlaying == false)
+                            {
+                                m_Audio.Play();
+                            }
+
                             if (m_SkidTrail[i] != null)
                             {
                                 m_SkidTrail[i].position = m_WheelColliders[i].transform.position - wheelHit.normal * m_WheelColliders[i].radius;
                                 m_SkidTrail[i].forward = -wheelHit.normal;
+
+                                m_Smoke[i].transform.position = m_SkidTrail[i].position;
+                                m_Smoke[i].Emit(1);
                             }
+
+                            isSleep = true;
+
                             continue;
                         }
                     }
                     else
                     {
                         m_SkidTrail[i] = null;
+                        m_Smoke[i].Stop();
                     }
+                }
+
+                if(isSleep == false)
+                {
+                    m_Audio.Stop();
                 }
             }
         }
