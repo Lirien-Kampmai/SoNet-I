@@ -40,6 +40,7 @@ namespace ProjectCar
             [SerializeField] private int m_SelectedGearIndex;
 
             public float LinearVelocity => m_CarPhisics.LinearVelocity;
+            public float NormalizeLinearVelocity => m_CarPhisics.LinearVelocity / MaxSpeed;
             public float WheelSpeed => m_CarPhisics.GetWheelSpeed();
             public float MaxSpeed => m_MaxSpeed;
             public float EngineRPM => m_EngineRPM;

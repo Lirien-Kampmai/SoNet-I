@@ -11,7 +11,7 @@ namespace ProjectCar
         {
             [SerializeField] private WheelCollider[] m_WheelColliders;
             [SerializeField] private ParticleSystem[] m_Smoke;
-            [SerializeField] private new AudioSource m_Audio;
+            [SerializeField] private AudioSource m_Audio;
             [SerializeField] private float m_ForwardSlipLimit;
             [SerializeField] private float m_SidewaySlipLimit;
             [SerializeField] private GameObject m_SkidPrefab;
